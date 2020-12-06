@@ -1,0 +1,11 @@
+[Unit]
+Description=Description of my application
+After=network.target
+
+[Service]
+WorkingDirectory=/$app_path$
+Environment="PATH=/$app_path$/venv/bin"
+ExecStart=/$app_path$/venv/bin/uwsgi --ini uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target
