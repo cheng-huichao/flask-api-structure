@@ -9,9 +9,9 @@ class Hello(db.Model):
     __tablename__ = 'hello_table'
 
     id = db.Column(db.Integer, primary_key=True)
-    field1 = db.Column(db.String(256))
-    field1 = db.Column(db.DateTime, default=func.now(), onupdate=func.now())
+    name = db.Column(db.String(256))
+    gender = db.Column(db.DateTime, default=func.now(), onupdate=func.now())
 
     def __repr__(self):
-        return '<hello_table {}>'.format(self.field1)
+        return '<hello_table {}>'.format(self.name)
 

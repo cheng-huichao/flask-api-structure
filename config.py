@@ -16,8 +16,21 @@ class DevelopmentConfigmap(Config):
     """
     Development Config
     """
+    # ** sqlite **#
+    # SQLALCHEMY_DATABASE_URI = "sqlite:///dev.db"
 
-    SQLALCHEMY_DATABASE_URI = "sqlite:///dev.db"
+    # ** mysql **#
+    # SQLALCHEMY_DATABASE_URI = "mysql://<username>:<password>@<servername>/<dbname>"
+
+    # ** postgresql **#
+    # SQLALCHEMY_DATABASE_URI = "postgresql://<username>:<password>@<servername>/<dbname>"
+
+    # ** mssql **#
+    ## pip install pymssql
+
+    SQLALCHEMY_DATABASE_URI = "mssql+pymssql://<username>:<password>@<servername>:<port>/<dbname>"
+
+    # 注意 ***** 数据table会被删除 ☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️☠️ 如果model 里面没有定义
 
 
 class ProductionConfigmap(Config):
